@@ -6,19 +6,19 @@ def solution(a, d, included):
     # 빈배열
     arr = []
 
-    # for문 - 등차수열로 만들어진 배열을 담아준다.
+    # for문 - 등차수열로 만들어진 배열을 담아준다
     for i in included:
         if(len(arr) == 0):
             arr.append(a)
         else:
             arr.append(arr[-1] + d)
-    
-    # included가 false일 경우 배열에서 제거해준다.
-    # reversed - 순서대로 하면 index가 꼬이기 때문에 뒤에서 부터 제거해 준다.
+  
+    # included가 false일 경우 배열에서 제거
+    # reversed - 순서대로 하면 index가 꼬이기 때문에 뒤에서 부터 제거
     for index, isTrue in reversed(list(enumerate(included))):
         if not isTrue:
             
-            # 해당 index의 배열 요소를 제거한다.
+            # 해당 index의 배열 요소를 제거
             arr.pop(index)
     
     answer = sum(arr)
